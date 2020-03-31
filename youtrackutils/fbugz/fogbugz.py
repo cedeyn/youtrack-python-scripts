@@ -71,7 +71,7 @@ class FogBugz:
         except urllib2.URLError, e:
             raise FogBugzConnectionError(e)
         except UnicodeDecodeError, e:
-            print kwargs
+            print(kwargs)
             raise
 
         if response.error:

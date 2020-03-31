@@ -24,25 +24,25 @@ class FBClient(object):
             for p in self._client.listPeople(fIncludeNormal=1).findAll('person'):
                 self._users.append(self._create_user(p, 'Normal'))
         except:
-            print "Can't get Normal users"
+            print("Can't get Normal users")
 
         try:
             for p in self._client.listPeople(fIncludeNormal=0, fIncludeDeleted=1).findAll('person'):
                 self._users.append(self._create_user(p, 'Deleted'))
         except:
-            print "Can't get Deleted users"
+            print("Can't get Deleted users")
 
         try:
             for p in self._client.listPeople(fIncludeNormal=0, fIncludeVirtual=1).findAll('person'):
                 self._users.append(self._create_user(p, 'Virtual'))
         except:
-            print "Can't get Virtual users"
+            print("Can't get Virtual users")
 
         try:
             for p in self._client.listPeople(fIncludeNormal=0, fIncludeCommunity=1).findAll('person'):
                 self._users.append(self._create_user(p, 'Community'))
         except:
-            print "Can't get Community users"
+            print("Can't get Community users")
 
         if 'FogBugz' not in [u.login for u in self._users]:
             self._users.append(FBUser('FogBugz'))

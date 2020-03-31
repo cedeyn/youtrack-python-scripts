@@ -171,8 +171,8 @@ class RedmineClient(object):
             try:
                 role.attributes['permissions'] = Role().find(role.id).permissions
             except (ResourceNotFound, MethodNotAllowed):
-                print "WARN: Can't get permissions for roles."
-                print "WARN: This Redmine version doesn't support this feature."
+                print("WARN: Can't get permissions for roles.")
+                print("WARN: This Redmine version doesn't support this feature.")
                 break
         return roles
 

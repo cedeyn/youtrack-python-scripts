@@ -29,7 +29,7 @@ class Client(object):
                     plugins[plugin_name] = plugin(self.env)
                     break
         for plugin_name in plugins.keys():
-            print "Plugin '%s' will be used to get workitems." % plugin_name
+            print("Plugin '%s' will be used to get workitems." % plugin_name)
         return plugins.values()
 
     def get_project_description(self):
