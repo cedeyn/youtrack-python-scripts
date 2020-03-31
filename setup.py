@@ -9,12 +9,12 @@ try:
     md_file = path.join(here, 'README.md')
     rst_file = path.join(here, 'README.rst')
     pypandoc.convert_file(source_file=md_file, outputfile=rst_file, to='rst')
+    # Get the long description from the relevant file
+    with open(path.join(here, 'README.rst')) as f:
+        long_description = f.read()
 except (ImportError, OSError, IOError, RuntimeError):
-    pass
+    long_description = ""
 
-# Get the long description from the relevant file
-with open(path.join(here, 'README.rst')) as f:
-    long_description = f.read()
 
 # Get version from file
 with open(path.join(here, 'version')) as f:
